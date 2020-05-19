@@ -18,6 +18,14 @@ public class IocDemo {
         userService.sayHello();
     }
 
+    public static void demo1_1() {
+        UserServiceImpl userService = new UserServiceImpl();
+        userService.setName("trytry");
+        userService.sayHello();
+
+    }
+
+
     public static void demo2() {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -29,7 +37,8 @@ public class IocDemo {
 
 
     public static void main(String[] args) {
-        demo2();
+        demo1_1();
+//        demo2();
     }
 
 

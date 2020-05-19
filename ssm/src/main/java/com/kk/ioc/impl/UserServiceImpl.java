@@ -8,9 +8,18 @@ import com.kk.ioc.UserService;
  */
 public class UserServiceImpl implements UserService {
 
+
+
+    private String name;
+
     @Override
     public void sayHello() {
 
-        System.out.println("Hello 2020");
+        System.out.println("Hello 2020" + name);
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

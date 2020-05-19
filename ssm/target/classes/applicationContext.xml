@@ -5,5 +5,9 @@
 
 
 
-    <bean id="userService" class="com.kk.ioc.impl.UserServiceImpl"/>
+    <!--    bean 标签，意味着控制反转-->
+    <bean id="userService" class="com.kk.ioc.impl.UserServiceImpl">
+        <!--        property 标签，将类里的属性也同样注入到容器中，即依赖注入-->
+        <property name="name" value="2020"/>
+    </bean>
 </beans>
