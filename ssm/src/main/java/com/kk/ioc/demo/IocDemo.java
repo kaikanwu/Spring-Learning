@@ -28,7 +28,9 @@ public class IocDemo {
 
     public static void demo2() {
 
+        // Spring 的工厂类
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        // 通过工厂获取类
         UserService userService = (UserService) applicationContext.getBean("userService");
         userService.sayHello();
     }

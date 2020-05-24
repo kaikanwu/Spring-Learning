@@ -10,4 +10,14 @@
         <!--        property 标签，将类里的属性也同样注入到容器中，即依赖注入-->
         <property name="name" value="2020"/>
     </bean>
+
+    <bean id="bean1" class="com.kk.ioc.bean.Bean1"/>
+
+    <bean id="bean2" class="com.kk.ioc.factory.Bean2Factory" factory-method="createBean2"/>
+
+    <bean id="bean3Factory" class="com.kk.ioc.factory.Bean3Factory"/>
+
+    <bean id="bean3" factory-bean="bean3Factory" factory-method="createBean3"/>
+
+
 </beans>
