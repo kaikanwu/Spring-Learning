@@ -30,6 +30,10 @@ public class BeanDemo {
         applicationContext.getBean("bean3");
     }
 
+    public static void demo4() {
+        
+    }
+
 
 
     public static void main(String[] args) {
