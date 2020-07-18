@@ -11,13 +11,17 @@
         <property name="name" value="2020"/>
     </bean>
 
+<!--    Bean 实例化1: 无参构造器-->
     <bean id="bean1" class="com.kk.ioc.bean.Bean1"/>
-
+<!--    Bean 实例化2：静态工厂来实例-->
     <bean id="bean2" class="com.kk.ioc.factory.Bean2Factory" factory-method="createBean2"/>
-
+<!--    Bean 实例化3： 实例工厂类来实例，先注册工厂-->
     <bean id="bean3Factory" class="com.kk.ioc.factory.Bean3Factory"/>
 
     <bean id="bean3" factory-bean="bean3Factory" factory-method="createBean3"/>
 
+
+<!--    测试 bean 的生命周期-->
+    <bean id="house" class="com.kk.ioc.bean.House" init-method="setUp" destroy-method="tearDown"/>
 
 </beans>
