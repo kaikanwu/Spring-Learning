@@ -2,6 +2,7 @@ package com.kk.hellospring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,30 +15,33 @@ import java.sql.SQLException;
 @SpringBootApplication
 @RestController
 @Slf4j
-public class HelloSpringApplication {
+public class HelloSpringApplication implements CommandLineRunner {
 
-	@Autowired
-	private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
-	public static void main(String[] args) {
-		SpringApplication.run(HelloSpringApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HelloSpringApplication.class, args);
+    }
 
-	@RequestMapping("/hello")
-	public String hello() {
-		return "hello spring";
-	}
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello spring 2020";
+    }
 
 
-	public void run(String... args) throws  Exception {
-		showConnection();
-	}
 
-	private void showConnection() throws SQLException {
-		log.info(dataSource.toString());
-		Connection connection = dataSource.getConnection();
-		connection.close();
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        showConnection();
+    }
+
+    private void showConnection() throws SQLException {
+        log.info(dataSource.toString());
+        Connection connection = dataSource.getConnection();
+        log.info(connection.toString());
+        connection.close();
+    }
 
 
 }
