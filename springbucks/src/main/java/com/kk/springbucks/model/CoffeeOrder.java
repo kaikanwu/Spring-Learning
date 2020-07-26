@@ -30,17 +30,16 @@ public class CoffeeOrder {
 
 
     private String customer;
-
-
+    
 
     @ManyToMany
     @JoinTable("T_ORDER_COFFEE")
     private List<Coffee> items;
 
 
-
     @Column(nullable = false)
     private Integer state;
+
 
     @CreationTimestamp
     @Column(updatable = false)
