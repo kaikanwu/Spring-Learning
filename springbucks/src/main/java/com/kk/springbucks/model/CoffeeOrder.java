@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table("T_ORDER")
+//@Table("T_ORDER")
 @Entity
 @Builder
 public class CoffeeOrder {
@@ -33,7 +33,7 @@ public class CoffeeOrder {
     
 
     @ManyToMany
-    @JoinTable("T_ORDER_COFFEE")
+//    @JoinTable("T_ORDER_COFFEE")
     private List<Coffee> items;
 
 
